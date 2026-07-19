@@ -13,7 +13,6 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 })
 export class SectionInicialComponent {
   
-  // Usando o padrão moderno inject() apenas para o que essa tela precisa: abrir modais!
   private dialog = inject(MatDialog);
   private snackBar = inject(MatSnackBar);
 
@@ -33,8 +32,6 @@ export class SectionInicialComponent {
           verticalPosition: 'top', 
           panelClass: ['!bg-lime-500', '!text-fundo', 'font-bold', 'rounded-md'] 
         });
-      } else {
-        // Nada a fazer, o usuário cancelou
       }
     });
 

@@ -25,13 +25,12 @@ export class DespesaFormComponent {
       categoria: ['', Validators.required],
       formaPagamento: ['', Validators.required],
       valor: [null, [Validators.required, Validators.min(0.01)]],
-      // Ajustado de 'data' para 'dataDespesa' para espelhar o Model e DTO do Back-end
       dataDespesa: [new Date().toISOString().split('T')[0], Validators.required],
-      numeroParcelas: [1, [Validators.required, Validators.min(1)]]
+      parcelas: [1, [Validators.required, Validators.min(1)]]
     });
 
     this.formDespesa.get('formaPagamento')?.valueChanges.subscribe(forma => {
-      const numParcelasControl = this.formDespesa.get('numeroParcelas');
+      const numParcelasControl = this.formDespesa.get('parcelas');
       
       if (forma === 'CARTAO_CREDITO') {
         numParcelasControl?.setValidators([Validators.required, Validators.min(1)]);

@@ -11,5 +11,5 @@ import { BotaoComponent } from '../button-component/button-component'
   styleUrl: './navbar.css'
 })
 export class NavbarComponent {
-  // A lógica do botão de alternar tema ou menus será inserida aqui futuramente
+  // Implementar a lógica do botão de alternar tema
 } 

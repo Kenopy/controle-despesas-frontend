@@ -44,7 +44,7 @@ export interface PeriodicElement {
 export class TableComponent {
   displayedColumns: string[] = ['data', 'descricao', 'categoria', 'formaPagamento', 'numeroParcelas', 'valor', 'acoes'];
   getCategoriaStyle(categoria: string): string {
-    // Ajuste os nomes de acordo com o que vem do seu banco/mock
+
     switch (categoria.toLowerCase()) {
       case 'games': 
         return 'bg-purple-500/20 text-purple-400 border border-purple-500/30';
