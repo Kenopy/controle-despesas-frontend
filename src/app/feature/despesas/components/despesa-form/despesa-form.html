@@ -1,0 +1,71 @@
+<div class="flex flex-col p-6 bg-fundo text-texto w-full max-w-md rounded-xl">
+  
+  <h2 class="text-2xl font-bold mb-6">Nova Despesa</h2>
+
+  <form [formGroup]="formDespesa" (ngSubmit)="salvar()" class="flex flex-col gap-4">
+    
+    <div class="flex flex-col gap-1">
+      <label for="descricao" class="text-sm font-semibold opacity-80">Descrição</label>
+      <input type="text" id="descricao" formControlName="descricao" placeholder="Ex: Jogo Steam"
+             class="px-3 py-2 bg-transparent border border-texto/20 rounded-md focus:outline-none focus:border-lineButton transition-colors">
+    </div>
+
+    <div class="flex gap-4">
+      <div class="flex flex-col gap-1 w-1/2">
+        <label for="valor" class="text-sm font-semibold opacity-80">Valor (R$)</label>
+        <input type="number" id="valor" formControlName="valor" placeholder="0.00"
+               class="px-3 py-2 bg-transparent border border-texto/20 rounded-md focus:outline-none focus:border-lineButton transition-colors">
+      </div>
+
+      <div class="flex flex-col gap-1 w-1/2">
+        <label for="dataDespesa" class="text-sm font-semibold opacity-80">Data</label>
+        <input type="date" id="dataDespesa" formControlName="dataDespesa"
+               class="px-3 py-2 bg-transparent border border-texto/20 rounded-md focus:outline-none focus:border-lineButton transition-colors [&::-webkit-calendar-picker-indicator]:invert">
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label for="categoria" class="text-sm font-semibold opacity-80">Categoria</label>
+      <select id="categoria" formControlName="categoria"
+              class="px-3 py-2 bg-fundo border border-texto/20 rounded-md focus:outline-none focus:border-lineButton transition-colors">
+        <option value="" disabled selected>Selecione uma categoria...</option>
+        <option value="ALIMENTACAO">Alimentação</option>
+        <option value="TRANSPORTE">Transporte</option>
+        <option value="LAZER">Lazer</option>
+        <option value="GAMES">Games</option>
+        <option value="CARRO">Carro</option>
+        <option value="CASA">Casa</option>
+        <option value="SAUDE">Saúde</option>
+        <option value="EDUCACAO">Educação</option>
+        <option value="OUTROS">Outros</option>
+      </select>
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label for="formaPagamento" class="text-sm font-semibold opacity-80">Forma de Pagamento</label>
+      <select id="formaPagamento" formControlName="formaPagamento"
+              class="px-3 py-2 bg-fundo border border-texto/20 rounded-md focus:outline-none focus:border-lineButton transition-colors">
+        <option value="" disabled selected>Selecione a forma...</option>
+        <option value="PIX">PIX</option>
+        <option value="CARTAO_CREDITO">Cartão de Crédito</option>
+        <option value="CARTAO_DEBITO">Cartão de Débito</option>
+        <option value="DINHEIRO">Dinheiro</option>
+        <option value="BOLETO">Boleto</option>
+      </select>
+    </div>
+    
+    @if (formDespesa.get('formaPagamento')?.value === 'CARTAO_CREDITO') {
+    <div class="flex flex-col gap-1 animate-fade-in">
+        <label for="numeroParcelas" class="text-sm font-semibold opacity-80">Número de Parcelas</label>
+        <input type="number" id="numeroParcelas" formControlName="numeroParcelas" min="1"
+            class="px-3 py-2 bg-transparent border border-texto/20 rounded-md focus:outline-none focus:border-lineButton transition-colors">
+    </div>
+    }
+
+    <div class="flex justify-end gap-3 mt-4">
+      <app-botao type="button" variante="secundario" (click)="cancelar()">Cancelar</app-botao>
+      <app-botao type="submit" variante="primario">Salvar</app-botao>
+    </div>
+
+  </form>
+</div>

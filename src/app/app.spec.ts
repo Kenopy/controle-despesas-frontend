@@ -14,10 +14,16 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', async () => {
+it('deve renderizar a navbar na tela principal', async () => {
+    // 1. Cria a casca do componente App (Isso resolve o erro do fixture!)
     const fixture = TestBed.createComponent(App);
+    
+    // 2. Força o Angular a renderizar o HTML para a Navbar aparecer
+    fixture.detectChanges(); 
+
+    // 3. Aguarda tudo estabilizar e faz a verificação
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, controle-financeiro-web');
+    expect(compiled.querySelector('app-navbar')).toBeTruthy();
   });
 });

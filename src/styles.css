@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /*--cor-fundo-pagina:#283444;*/ 
+  --cor-fundo-pagina: #011e31;
+  --cor-fundo-navbar: #1d2f47;
+  --cor-texto-padrao: #f6efe5;
+  --cor-line-button: #0091ff;
+  --cor-bg-button: #0091ff;
+}
+
+.tema-claro {
+  --cor-fundo-pagina: #f3f4f6;
+  --cor-fundo-navbar: #ffffff;
+  --cor-texto-padrao: #1f2937;
+  --cor-line-button: #001b44;
+  --cor-bg-button: #0a3981;
+
+}
+
+.modal-customizado .mdc-dialog__surface {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body {
+  background-color: var(--cor-fundo-pagina);
+  color: var(--cor-texto-padrao);
+}

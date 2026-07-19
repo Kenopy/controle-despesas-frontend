@@ -1,0 +1,31 @@
+table {
+  width: 100%;
+}
+/* Muda a cor de fundo das linhas e o espaçamento interno */
+.mat-mdc-row:hover {
+  background-color: var(--cor-fundo-pagina);
+}
+
+.mat-mdc-cell {
+  padding: 12px 16px;
+}
+
+/* Centraliza o cabeçalho */
+.mat-mdc-header-cell {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* table-component.css */
+
+/* Pinta os SVGs das setinhas de Próxima/Anterior */
+::ng-deep .mat-mdc-paginator-icon {
+  fill: var(--cor-texto-padrao) !important;
+  
+}
+
+/* Pinta a setinha do dropdown e o número selecionado */
+::ng-deep .mat-mdc-select-value,
+::ng-deep .mat-mdc-select-arrow {
+  color: var(--cor-texto-padrao) !important;
+}
