@@ -9,7 +9,11 @@ import { Despesa } from '../../models/despesa.model';
 @Component({
   selector: 'app-despesa-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, BotaoComponent],
+  imports: [
+    CommonModule, 
+    ReactiveFormsModule, 
+    BotaoComponent
+  ],
   templateUrl: './despesa-form.html'
 })
 export class DespesaFormComponent {

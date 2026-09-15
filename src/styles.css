@@ -4,11 +4,13 @@
 
 :root {
   /*--cor-fundo-pagina:#283444;*/ 
-  --cor-fundo-pagina: #011e31;
-  --cor-fundo-navbar: #1d2f47;
+  --cor-fundo-pagina: #041b42;
+  --cor-fundo-navbar: #0b285b;
+  --cor-fundo-table-despesas: #041b42;
   --cor-texto-padrao: #f6efe5;
   --cor-line-button: #0091ff;
   --cor-bg-button: #0091ff;
+  --cor-border-table: #0091ff;
 }
 
 .tema-claro {
